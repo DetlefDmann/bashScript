@@ -1,0 +1,15 @@
+#!/bin/bash
+
+printf "Checking versions.....\n\n"
+
+printf "Node version "
+node -v
+printf "NPM version  "
+npm -v
+git --version
+slack --version
+google-chrome --version
+printf "VSCode version "
+code -v
+
+exit
