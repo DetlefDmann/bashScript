@@ -13,6 +13,11 @@ echo "Installing updates if available"
 sudo apt-get upgrade -yy
 }
 
+node() {
+echo "Updating node to latest LTS version"
+nvm install --lts
+}
+
 
 clean() {
 echo "Cleaning up files that are no longer needed"
@@ -20,10 +25,21 @@ sudo apt-get autoremove -yy
 sudo apt-get autoclean
 }
 
-#run that functions
+
+#run those functions
 
 update
 clean
+
+# read -p "Want to install node LTS? (y/n)" answer
+# case ${answer:0:1} in
+#     y|Y )
+#         node
+#     ;;
+#     * )
+#         break
+#     ;;
+# esac
 
 echo "Exiting the script"
 
