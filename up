@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# when errors quit
+set -e
+
+echo "Starting with updating the system"
+# make function to run system updates
+
+update() {
+echo "Checking for updates"
+sudo apt-get update
+echo "Installing updates if available"
+sudo apt-get upgrade -yy
+}
+
+
+clean() {
+echo "Cleaning up files that are no longer needed"
+sudo apt-get autoremove -yy
+sudo apt-get autoclean
+}
+
+#run that functions
+
+update
+clean
+
+echo "Exiting the script"
+
+exit
